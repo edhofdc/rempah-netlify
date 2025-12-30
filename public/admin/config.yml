@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: edhofdc/rempah-netlify
   branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 publish_mode: editorial_workflow
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
