@@ -1,32 +1,53 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Produk Rempah" description="Rempah-rempah berkualitas dari Indonesia">
+<Layout title="Rempah — Rempah berkualitas" description="Profil perusahaan rempah Indonesia">
   <section class="hero">
     <div class="hero-content">
-      <h1>Produk Rempah</h1>
-      <p class="sub">Rempah-rempah berkualitas dari Indonesia</p>
-      <div class="cta">
-        <a href="/produk" class="btn">Lihat Produk</a>
-      </div>
+      <h1>Rempah Berkualitas dari Nusantara</h1>
+      <p>Produk rempah terbaik untuk UMKM dan industri, dikemas higienis dan siap ekspor.</p>
+      <a class="cta" href="/produk">Lihat Produk</a>
     </div>
+    <img class="hero-image" src="/images/hero-rempah.svg" alt="Rempah-rempah Indonesia" loading="lazy" />
   </section>
 
-  <section class="intro">
-    <div class="card">
-      <h2>Kualitas • Kecepatan • Kepercayaan</h2>
-      <p>Kami menyediakan rempah terbaik dengan proses seleksi ketat, pengemasan rapi, dan pengiriman tepat waktu.</p>
-    </div>
+  <section class="features">
+    <article>
+      <h3>Kualitas Terjamin</h3>
+      <p>Standar mutu tinggi dengan proses seleksi ketat.</p>
+    </article>
+    <article>
+      <h3>Varian Lengkap</h3>
+      <p>Dari lada, kayu manis, cengkeh, pala, hingga kunyit.</p>
+    </article>
+    <article>
+      <h3>Distribusi Cepat</h3>
+      <p>Jangkauan nasional dan dukungan ekspor.</p>
+    </article>
   </section>
 </Layout>
 
 <style>
-  .hero{ min-height: 56vh; display:grid; place-items:center; background: linear-gradient(120deg, rgba(139,94,60,.15), rgba(47,107,45,.12)), url('/images/hero-rempah.svg'); background-size: cover; background-position: center; }
-  .hero-content{ text-align:center; padding: 3rem 1rem; }
-  .sub{ margin:.5rem 0 1rem; color:#5a5a5a; font-size:1.1rem; }
-  .btn{ display:inline-block; padding:.8rem 1.1rem; background: var(--green); color:#fff; border-radius: 10px; text-decoration:none; }
-  .btn:hover{ filter: brightness(0.95); }
-  .intro{ max-width: 900px; margin: 0 auto; padding: 2rem 1rem 4rem; }
-  .card{ background: var(--surface); border: 1px solid var(--surface-border); border-radius: 14px; padding: 1.25rem; text-align: center; }
+  .hero { display:grid; grid-template-columns: 1.2fr .8fr; align-items:center; gap: 2rem; padding: 2.5rem 1rem; }
+  .hero-content h1 { font-size: clamp(1.6rem, 2.5vw + 1rem, 3rem); line-height: 1.15; margin: 0 0 .75rem; }
+  .hero-content p { font-size: clamp(1rem, .6vw + .8rem, 1.15rem); color:#555; margin: 0 0 1rem; }
+  .cta { display:inline-block; background: var(--green); color:#fff; text-decoration:none; padding:.7rem 1rem; border-radius: 12px; font-weight:600; }
+  .cta:hover { filter: brightness(1.05); }
+  .hero-image { width:100%; height:auto; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.08); object-fit: cover; }
+
+  .features { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding: 1.5rem 1rem 2.5rem; }
+  .features article { background: var(--surface); border:1px solid var(--surface-border); border-radius: 14px; padding: 1rem; }
+  .features h3 { margin:0 0 .35rem; font-size: clamp(1.1rem, .5vw + 1rem, 1.35rem); }
+  .features p { margin:0; color:#666; }
+
+  @media (max-width: 900px){
+    .hero { grid-template-columns: 1fr; gap: 1rem; }
+    .hero-image { order: -1; }
+  }
+  @media (max-width: 640px){
+    .hero { padding: 1.25rem .75rem; }
+    .features { grid-template-columns: 1fr; padding: 1rem .75rem 2rem; }
+    .cta { width: 100%; text-align:center; }
+  }
 </style>

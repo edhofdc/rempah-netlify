@@ -21,7 +21,8 @@ const { title = 'Rempah — Company Profile', description = 'Rempah-rempah berku
   <body>
     <header class="site-header">
       <a class="brand" href="/">Rempah</a>
-      <nav>
+      <button class="menu-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="nav">
         <a href="/">Home</a>
         <a href="/tentang-kami">Tentang Kami</a>
         <a href="/produk">Produk</a>
@@ -37,6 +38,17 @@ const { title = 'Rempah — Company Profile', description = 'Rempah-rempah berku
     <footer class="site-footer">
       <p>© {new Date().getFullYear()} Rempah • Semua hak cipta dilindungi.</p>
     </footer>
+
+    <script>
+      const btn = document.querySelector('.menu-toggle');
+      const nav = document.getElementById('primary-nav');
+      btn?.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        nav.classList.toggle('is-open', !open);
+        document.body.classList.toggle('no-scroll', !open);
+      });
+    </script>
   </body>
 </html>
 
@@ -51,10 +63,21 @@ const { title = 'Rempah — Company Profile', description = 'Rempah-rempah berku
   html, body { margin:0; width:100%; height:100%; background: var(--cream); color: var(--text); font-family: var(--font-sans); }
   .site-header{ position: sticky; top:0; z-index: 20; backdrop-filter: saturate(140%) blur(8px); background: rgba(245, 237, 225, .85); border-bottom: 1px solid var(--surface-border); display:flex; align-items:center; justify-content: space-between; padding:.75rem 1rem; }
   .brand{ font-family: var(--font-serif); font-weight:700; color: var(--brown); text-decoration:none; font-size:1.25rem; }
-  nav{ display:flex; gap:.75rem; }
-  nav a{ color: var(--text); text-decoration:none; padding:.5rem .6rem; border-radius:8px; }
-  nav a:hover{ background: var(--surface-2); }
+  .menu-toggle { display:none; cursor:pointer; }
+  .nav{ display:flex; gap:.75rem; }
+  .nav a{ color: var(--text); text-decoration:none; padding:.5rem .6rem; border-radius:8px; }
+  .nav a:hover{ background: var(--surface-2); }
   .site-main{ min-height: calc(100vh - 140px); }
   .site-footer{ border-top: 1px solid var(--surface-border); padding: 1rem; text-align:center; color:#666; }
   h1, h2, h3 { font-family: var(--font-serif); color: var(--text-strong); }
+
+  /* Mobile responsive nav */
+  @media (max-width: 768px) {
+    .site-header { padding:.6rem .75rem; }
+    .menu-toggle { display:block; background: var(--brown); color:#fff; border:0; border-radius:10px; padding:.55rem .8rem; font-size:.95rem; }
+    .nav { position: fixed; top:0; right:0; bottom:0; width: 72%; max-width: 300px; background: var(--surface); border-left: 1px solid var(--surface-border); box-shadow: -6px 0 18px rgba(0,0,0,0.08); transform: translateX(100%); transition: transform .25s ease; display:flex; flex-direction: column; padding: 1rem; gap:.25rem; }
+    .nav.is-open { transform: translateX(0); }
+    .nav a { padding:.9rem 1rem; }
+    body.no-scroll { overflow: hidden; }
+  }
 </style>
