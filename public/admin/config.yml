@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main
+publish_mode: editorial_workflow
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+collections:
+  - name: "products"
+    label: "Produk Rempah"
+    label_singular: "Produk Rempah"
+    folder: "src/content/products"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Nama Produk", name: "title", widget: "string" }
+      - { label: "Deskripsi", name: "description", widget: "text" }
+      - { label: "Gambar", name: "image", widget: "image", choose_url: true }
+      - { label: "Published", name: "published", widget: "boolean", default: true }

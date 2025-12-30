@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Kontak" description="Hubungi kami untuk penawaran dan kerja sama">
+  <section class="page-header">
+    <h1>Kontak</h1>
+    <p>Silakan hubungi kami untuk informasi produk dan penawaran kerja sama.</p>
+  </section>
+
+  <section class="contact">
+    <div class="card">
+      <h2>Informasi Kontak</h2>
+      <p><strong>Email:</strong> hello@rempah.co.id</p>
+      <p><strong>Telepon:</strong> +62 812-3456-7890</p>
+      <p><strong>Alamat:</strong> Jakarta, Indonesia</p>
+      <a class="wa" href="https://wa.me/6281234567890" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header { text-align: center; padding: 3rem 1rem 1rem; }
+  .contact { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+  .card { background: var(--surface); border: 1px solid var(--surface-border); border-radius: 14px; padding: 1.25rem; }
+  .wa { display: inline-block; margin-top: 1rem; padding: .75rem 1rem; border-radius: 10px; background: var(--green); color: white; text-decoration: none; }
+  .wa:hover { filter: brightness(0.95); }
+</style>

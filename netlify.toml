@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Optional: redirect /admin to the CMS index
+# [[redirects]]
+#   from = "/admin"
+#   to = "/admin/index.html"
+#   status = 200

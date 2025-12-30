@@ -1,11 +1,32 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Produk Rempah" description="Rempah-rempah berkualitas dari Indonesia">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Produk Rempah</h1>
+      <p class="sub">Rempah-rempah berkualitas dari Indonesia</p>
+      <div class="cta">
+        <a href="/produk" class="btn">Lihat Produk</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="card">
+      <h2>Kualitas • Kecepatan • Kepercayaan</h2>
+      <p>Kami menyediakan rempah terbaik dengan proses seleksi ketat, pengemasan rapi, dan pengiriman tepat waktu.</p>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .hero{ min-height: 56vh; display:grid; place-items:center; background: linear-gradient(120deg, rgba(139,94,60,.15), rgba(47,107,45,.12)), url('/images/hero-rempah.svg'); background-size: cover; background-position: center; }
+  .hero-content{ text-align:center; padding: 3rem 1rem; }
+  .sub{ margin:.5rem 0 1rem; color:#5a5a5a; font-size:1.1rem; }
+  .btn{ display:inline-block; padding:.8rem 1.1rem; background: var(--green); color:#fff; border-radius: 10px; text-decoration:none; }
+  .btn:hover{ filter: brightness(0.95); }
+  .intro{ max-width: 900px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+  .card{ background: var(--surface); border: 1px solid var(--surface-border); border-radius: 14px; padding: 1.25rem; text-align: center; }
+</style>

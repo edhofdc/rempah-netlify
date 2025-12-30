@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Tentang Kami" description="Profil perusahaan dan visi misi kami">
+  <section class="page-header">
+    <h1>Tentang Kami</h1>
+    <p>Rempah adalah perusahaan pemasok rempah-rempah Indonesia berkualitas untuk pasar lokal dan ekspor.</p>
+  </section>
+
+  <section class="content">
+    <div class="card">
+      <h2>Profil Perusahaan</h2>
+      <p>
+        Kami berfokus pada pengadaan, seleksi, dan distribusi rempah premium seperti jahe, kayu manis,
+        cengkeh, dan lada. Dengan jaringan petani dan mitra yang kuat, kami memastikan mutu, konsistensi,
+        dan keberlanjutan.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Visi</h2>
+      <p>Menjadi mitra terpercaya yang membawa rempah Indonesia mendunia dengan kualitas terbaik.</p>
+    </div>
+
+    <div class="card">
+      <h2>Misi</h2>
+      <ul>
+        <li>Menjaga standar mutu tinggi dari sumber ke pelanggan.</li>
+        <li>Mendukung petani lokal melalui kemitraan berkelanjutan.</li>
+        <li>Menyediakan layanan profesional dan responsif.</li>
+      </ul>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header { text-align: center; padding: 3rem 1rem 1rem; }
+  .content { max-width: 900px; margin: 0 auto; padding: 2rem 1rem 4rem; display: grid; gap: 1rem; }
+  .card { background: var(--surface); border: 1px solid var(--surface-border); border-radius: 14px; padding: 1.25rem; }
+  h2 { font-family: var(--font-serif); margin: 0 0 .75rem; color: var(--text-strong); }
+  p, li { color: var(--text); }
+</style>
